@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.ipynb_checkpoints/
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# Environment / secrets
+.env
+*.key
+
+# Large data and model files
+*.csv
+!**/sample/**/*.csv
+*.pt
+*.bin
+*.safetensors
+*.ckpt
+checkpoints/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Lecturer's original materials (kept locally, not committed)
+Resources/
