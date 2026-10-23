@@ -7,3 +7,9 @@ seaborn
 torch
 datasets
 gradio
+transformers
+peft
+trl
+accelerate
+bitsandbytes
+sacrebleu

@@ -41,10 +41,10 @@ This is a complete, working mini-LLM. Step by step:
 6. **Loss curve** — plots training vs. validation loss with Matplotlib to check the model is actually learning (and not overfitting).
 7. **Perplexity** — `exp(validation_loss)`, a standard metric for how "surprised" the model is by real text (lower = better).
 8. **Saving** — stores the trained weights plus the vocabulary and config in a checkpoint file (`tiny_transformer.pt`) so the model can be reloaded later without retraining.
-9. **Gradio chat demo** — wraps a `generate()` function (not shown in full here, but same idea as Week 2's `generate`: predict one character at a time from a prompt) in a simple chat UI so the tiny model can be talked to directly in the browser.
+9. **Gradio chat demo** — wraps a `generate()` function in a simple chat UI so the tiny model can be talked to directly in the browser. **Bug in this notebook:** it checks `if "generate" not in globals()` and calls `generate(...)`, but `generate()` is never actually defined anywhere in the notebook — Lab sheet 3's Step 9 ("generate stories from a prompt") is missing entirely, so the chat demo would fail as-is. Fixed in [My work](#my-work) below.
 
 ## My work
 
 - [notes.md](notes.md) — my notes
-- [lab/](lab/) — my lab work for this week
+- [lab/tiny_transformer_llm_complete.ipynb](lab/tiny_transformer_llm_complete.ipynb) — my completed version of the lab. Builds on the lecturer's notebook above, keeping Steps 1–8 as they were, and adds the two things it was missing: a working `generate()` function for Step 9 (same one-character-at-a-time sampling idea as Week 2's `generate`, so the Gradio chat cell actually works), and a Step 10 cell experimenting with model settings (`TinyTransformer` now takes `num_layers`/`nhead`/`dim_feedforward` as arguments instead of having them hard-coded, so different sizes can be compared). Not yet run.
 - [reflection.md](reflection.md) — my reflection

@@ -40,5 +40,8 @@ This script builds a tiny Transformer **by hand** (rather than using a ready-mad
 ## My work
 
 - [notes.md](notes.md) — my notes
-- [lab/](lab/) — my lab work for this week
+- **Group work — Lab sheet 2 ("The Forgetful Student"):** our group designed **PackWise**, a smart packing companion that reads a student's timetable, builds a daily packing list from it, and reminds them before they leave.
+  - [lab/Packwise.pptx](lab/Packwise.pptx) — presentation slides
+  - [lab/packwise_app_flow.png](lab/packwise_app_flow.png) — app flow diagram
+  - [lab/PackWise App.html](lab/PackWise%20App.html) — interactive app prototype (open in a browser)
 - [reflection.md](reflection.md) — my reflection

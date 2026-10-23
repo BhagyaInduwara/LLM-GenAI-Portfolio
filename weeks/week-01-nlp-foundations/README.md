@@ -30,10 +30,10 @@ Lab sheet 1 asks us to build a traditional (non-deep-learning) sentiment classif
 7. Evaluate it with accuracy, precision, recall, and F1-score.
 8. Try the trained model on a brand-new sentence.
 
-No starter code was provided for this lab — it's written from scratch in [lab/](lab/) once completed.
+No starter code was provided for this lab.
 
 ## My work
 
 - [notes.md](notes.md) — my notes
-- [lab/](lab/) — my lab work for this week
+- [lab/sentiment_analysis_traditional_ml.ipynb](lab/sentiment_analysis_traditional_ml.ipynb) — my completed version of the lab, covering all 8 steps from the lab sheet: downloading the UCI dataset, cleaning the text, exploring positive/negative word frequencies, a train/test split, a Bag-of-Words vectorizer, a Logistic Regression classifier, accuracy/precision/recall/F1 evaluation, and testing on new sentences. Not yet run — run it top to bottom to download the dataset and train the model.
 - [reflection.md](reflection.md) — my reflection
