@@ -1,0 +1,110 @@
+[
+  {
+    "id": 1,
+    "source": "Examination Regulations & Appeals.pdf",
+    "keywords": ["minimum attendance record of 80%"],
+    "reference_answer": "A minimum attendance of 80% in lectures, practical sessions, and tutorials.",
+    "en": "What attendance is required to sit the final exam?",
+    "si": "අවසාන විභාගයට පෙනී සිටීමට අවශ්‍ය පැමිණීමේ ප්‍රතිශතය කීයද?",
+    "ta": "இறுதித் தேர்வில் தோற்றுவதற்கு எவ்வளவு வருகை சதவீதம் தேவை?"
+  },
+  {
+    "id": 2,
+    "source": "Examination Regulations & Appeals.pdf",
+    "keywords": ["within 14 working days"],
+    "reference_answer": "Within 14 working days of the results publication date, with a fee of LKR 1,500 per module.",
+    "en": "What is the deadline to submit an academic appeal?",
+    "si": "ශාස්ත්‍රීය අභියාචනයක් ඉදිරිපත් කිරීමට ඇති අවසාන කාලය කුමක්ද?",
+    "ta": "கல்வி மேல்முறையீட்டைச் சமர்ப்பிப்பதற்கான காலக்கெடு என்ன?"
+  },
+  {
+    "id": 3,
+    "source": "Library Regulations and Access.pdf",
+    "keywords": ["Maximum 5 physical books"],
+    "reference_answer": "Undergraduates can borrow a maximum of 5 books for 14 days.",
+    "en": "How many books can an undergraduate borrow from the library, and for how long?",
+    "si": "උපාධි අපේක්ෂක සිසුවෙකුට පුස්තකාලයෙන් පොත් කීයක් කොපමණ කාලයකට ණයට ගත හැකිද?",
+    "ta": "இளங்கலை மாணவர் நூலகத்திலிருந்து எத்தனை புத்தகங்களை எவ்வளவு காலத்திற்கு இரவல் பெறலாம்?"
+  },
+  {
+    "id": 4,
+    "source": "University Generative AI Policy.pdf",
+    "keywords": ["permanent expulsion"],
+    "reference_answer": "It is Academic Misconduct under Regulation 14; penalties range from zero marks to permanent expulsion.",
+    "en": "What is the penalty for not declaring generative AI usage?",
+    "si": "ජනක AI භාවිතය ප්‍රකාශ නොකළහොත් ලැබෙන දඬුවම කුමක්ද?",
+    "ta": "உருவாக்க AI பயன்பாட்டை அறிவிக்காவிட்டால் என்ன தண்டனை?"
+  },
+  {
+    "id": 5,
+    "source": "University Generative AI Policy.pdf",
+    "keywords": ["for proofreading, grammar corrections"],
+    "reference_answer": "Yes, in Category B assessments, for proofreading, grammar, ideation, or explaining concepts, with prompts and outputs logged in an appendix.",
+    "en": "Can I use ChatGPT for proofreading my assignment?",
+    "si": "මගේ පැවරුම සෝදුපත් කියවීම සඳහා මට ChatGPT භාවිතා කළ හැකිද?",
+    "ta": "எனது ஒப்படைப்பை பிழைதிருத்தம் செய்ய ChatGPT ஐப் பயன்படுத்தலாமா?"
+  },
+  {
+    "id": 6,
+    "source": "Capstone Research Guidelines.pdf",
+    "keywords": ["12 academic credits"],
+    "reference_answer": "12 academic credits, spanning two semesters in Year 4.",
+    "en": "How many credits is the final year capstone project worth?",
+    "si": "අවසන් වසරේ පර්යේෂණ ව්‍යාපෘතිය සඳහා ලැබෙන ක්‍රෙඩිට් ගණන කීයද?",
+    "ta": "இறுதியாண்டு ஆய்வுத் திட்டத்திற்கு எத்தனை கிரெடிட்கள் வழங்கப்படும்?"
+  },
+  {
+    "id": 7,
+    "source": "Capstone Research Guidelines.pdf",
+    "keywords": ["Edge AI & Quantization"],
+    "reference_answer": "Advanced RAG, Autonomous AI Agents, and Edge AI & Quantization.",
+    "en": "What research topics can I choose for my final year project?",
+    "si": "මගේ අවසන් වසරේ ව්‍යාපෘතිය සඳහා තෝරාගත හැකි පර්යේෂණ මාතෘකා මොනවාද?",
+    "ta": "எனது இறுதியாண்டு திட்டத்திற்கு எந்த ஆய்வுத் தலைப்புகளைத் தேர்வு செய்யலாம்?"
+  },
+  {
+    "id": 8,
+    "source": "Examination Regulations & Appeals.pdf",
+    "keywords": ["Minimum Passing Requirement for Core Modules"],
+    "reference_answer": "Grade C, marks of 50% - 54% (2.00 GPA).",
+    "en": "What is the minimum mark needed to pass a core module?",
+    "si": "මූලික විෂයයක් සමත් වීමට අවශ්‍ය අවම ලකුණු කීයද?",
+    "ta": "முக்கிய பாடத்தில் சித்தியடைய தேவையான குறைந்தபட்ச மதிப்பெண் என்ன?"
+  },
+  {
+    "id": 9,
+    "source": "BSc Computer Science Syllabus.pdf",
+    "keywords": ["four-year full-time"],
+    "reference_answer": "Four years, full-time.",
+    "en": "How long is the BSc Computer Science degree programme?",
+    "si": "පරිගණක විද්‍යාව පිළිබඳ උපාධි පාඨමාලාව කොපමණ කාලයක්ද?",
+    "ta": "கணினி அறிவியல் இளங்கலைப் பட்டப்படிப்பு எத்தனை ஆண்டுகள்?"
+  },
+  {
+    "id": 10,
+    "source": "Examination Regulations & Appeals.pdf",
+    "keywords": ["Smartwatches, mobile phones"],
+    "reference_answer": "Smartwatches, mobile phones, programmable calculators (unless authorised), and unauthorised written notes.",
+    "en": "Which items are prohibited in the examination hall?",
+    "si": "විභාග ශාලාවට ගෙන යාම තහනම් කර ඇති දේවල් මොනවාද?",
+    "ta": "தேர்வு மண்டபத்தில் தடைசெய்யப்பட்ட பொருட்கள் எவை?"
+  },
+  {
+    "id": 11,
+    "source": "Library Regulations and Access.pdf",
+    "keywords": ["LKR 50.00"],
+    "reference_answer": "LKR 50 ($0.50) per book per day; borrowing is suspended if fines exceed LKR 1,000.",
+    "en": "What is the fine for returning a library book late?",
+    "si": "පුස්තකාල පොතක් ප්‍රමාද වී ආපසු දුන්විට අය කරන දඩය කීයද?",
+    "ta": "நூலகப் புத்தகத்தைத் தாமதமாகத் திருப்பித் தந்தால் எவ்வளவு அபராதம்?"
+  },
+  {
+    "id": 12,
+    "source": "Library Regulations and Access.pdf",
+    "keywords": ["up to 3 days in advance"],
+    "reference_answer": "Up to 3 days in advance via the Library Portal, for a maximum of 2 hours per group per day.",
+    "en": "How far in advance can I book a group discussion room?",
+    "si": "කණ්ඩායම් සාකච්ඡා කාමරයක් කොපමණ කලින් වෙන් කරගත හැකිද?",
+    "ta": "குழு கலந்துரையாடல் அறையை எத்தனை நாட்களுக்கு முன்பே முன்பதிவு செய்யலாம்?"
+  }
+]

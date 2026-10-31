@@ -1,0 +1,522 @@
+{
+  "results": [
+    {
+      "model": "all-MiniLM-L6-v2 (English-only)",
+      "strategy": "direct",
+      "language": "en",
+      "hit@1": 0.8333333333333334,
+      "hit@4": 0.9166666666666666,
+      "mrr": 0.873015873015873,
+      "ranks": [
+        1,
+        1,
+        1,
+        3,
+        1,
+        1,
+        7,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "model": "all-MiniLM-L6-v2 (English-only)",
+      "strategy": "direct",
+      "language": "si",
+      "hit@1": 0.25,
+      "hit@4": 0.5,
+      "mrr": 0.4035082972582973,
+      "ranks": [
+        3,
+        1,
+        5,
+        4,
+        1,
+        6,
+        8,
+        1,
+        11,
+        3,
+        5,
+        7
+      ]
+    },
+    {
+      "model": "all-MiniLM-L6-v2 (English-only)",
+      "strategy": "direct",
+      "language": "ta",
+      "hit@1": 0.3333333333333333,
+      "hit@4": 0.4166666666666667,
+      "mrr": 0.43736772486772485,
+      "ranks": [
+        7,
+        1,
+        9,
+        1,
+        1,
+        5,
+        10,
+        1,
+        8,
+        8,
+        3,
+        9
+      ]
+    },
+    {
+      "model": "all-MiniLM-L6-v2 (English-only)",
+      "strategy": "translated",
+      "language": "en",
+      "hit@1": 0.8333333333333334,
+      "hit@4": 0.9166666666666666,
+      "mrr": 0.873015873015873,
+      "ranks": [
+        1,
+        1,
+        1,
+        3,
+        1,
+        1,
+        7,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "model": "all-MiniLM-L6-v2 (English-only)",
+      "strategy": "translated",
+      "language": "si",
+      "hit@1": 0.16666666666666666,
+      "hit@4": 0.75,
+      "mrr": 0.43204365079365076,
+      "ranks": [
+        2,
+        1,
+        2,
+        8,
+        2,
+        4,
+        2,
+        4,
+        3,
+        12,
+        1,
+        7
+      ]
+    },
+    {
+      "model": "all-MiniLM-L6-v2 (English-only)",
+      "strategy": "translated",
+      "language": "ta",
+      "hit@1": 0.75,
+      "hit@4": 0.9166666666666666,
+      "mrr": 0.8244047619047619,
+      "ranks": [
+        1,
+        4,
+        1,
+        1,
+        1,
+        1,
+        7,
+        2,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "model": "multilingual-e5-small",
+      "strategy": "direct",
+      "language": "en",
+      "hit@1": 0.9166666666666666,
+      "hit@4": 0.9166666666666666,
+      "mrr": 0.9333333333333332,
+      "ranks": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        5,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "model": "multilingual-e5-small",
+      "strategy": "direct",
+      "language": "si",
+      "hit@1": 0.6666666666666666,
+      "hit@4": 0.9166666666666666,
+      "mrr": 0.7896825396825397,
+      "ranks": [
+        2,
+        3,
+        1,
+        1,
+        1,
+        1,
+        7,
+        1,
+        1,
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "model": "multilingual-e5-small",
+      "strategy": "direct",
+      "language": "ta",
+      "hit@1": 0.6666666666666666,
+      "hit@4": 0.8333333333333334,
+      "mrr": 0.775925925925926,
+      "ranks": [
+        5,
+        1,
+        2,
+        1,
+        1,
+        1,
+        9,
+        2,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "model": "multilingual-e5-small",
+      "strategy": "translated",
+      "language": "en",
+      "hit@1": 0.9166666666666666,
+      "hit@4": 0.9166666666666666,
+      "mrr": 0.9333333333333332,
+      "ranks": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        5,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "model": "multilingual-e5-small",
+      "strategy": "translated",
+      "language": "si",
+      "hit@1": 0.16666666666666666,
+      "hit@4": 0.5833333333333334,
+      "mrr": 0.3637566137566137,
+      "ranks": [
+        12,
+        7,
+        2,
+        9,
+        1,
+        3,
+        4,
+        4,
+        9,
+        12,
+        1,
+        2
+      ]
+    },
+    {
+      "model": "multilingual-e5-small",
+      "strategy": "translated",
+      "language": "ta",
+      "hit@1": 0.9166666666666666,
+      "hit@4": 0.9166666666666666,
+      "mrr": 0.9333333333333332,
+      "ranks": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        5,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "model": "qwen3-embedding:0.6b (Ollama)",
+      "strategy": "direct",
+      "language": "en",
+      "hit@1": 0.8333333333333334,
+      "hit@4": 0.9166666666666666,
+      "mrr": 0.8888888888888888,
+      "ranks": [
+        1,
+        1,
+        1,
+        2,
+        1,
+        1,
+        6,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "model": "qwen3-embedding:0.6b (Ollama)",
+      "strategy": "direct",
+      "language": "si",
+      "hit@1": 0.16666666666666666,
+      "hit@4": 0.75,
+      "mrr": 0.39444444444444443,
+      "ranks": [
+        4,
+        4,
+        4,
+        5,
+        1,
+        1,
+        2,
+        3,
+        5,
+        6,
+        3,
+        4
+      ]
+    },
+    {
+      "model": "qwen3-embedding:0.6b (Ollama)",
+      "strategy": "direct",
+      "language": "ta",
+      "hit@1": 0.25,
+      "hit@4": 0.6666666666666666,
+      "mrr": 0.5083333333333333,
+      "ranks": [
+        2,
+        6,
+        2,
+        5,
+        1,
+        2,
+        5,
+        5,
+        3,
+        1,
+        2,
+        1
+      ]
+    },
+    {
+      "model": "qwen3-embedding:0.6b (Ollama)",
+      "strategy": "translated",
+      "language": "en",
+      "hit@1": 0.8333333333333334,
+      "hit@4": 0.9166666666666666,
+      "mrr": 0.8888888888888888,
+      "ranks": [
+        1,
+        1,
+        1,
+        2,
+        1,
+        1,
+        6,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "model": "qwen3-embedding:0.6b (Ollama)",
+      "strategy": "translated",
+      "language": "si",
+      "hit@1": 0.16666666666666666,
+      "hit@4": 0.5833333333333334,
+      "mrr": 0.39444444444444443,
+      "ranks": [
+        3,
+        5,
+        4,
+        5,
+        1,
+        2,
+        1,
+        8,
+        8,
+        6,
+        3,
+        2
+      ]
+    },
+    {
+      "model": "qwen3-embedding:0.6b (Ollama)",
+      "strategy": "translated",
+      "language": "ta",
+      "hit@1": 0.8333333333333334,
+      "hit@4": 0.9166666666666666,
+      "mrr": 0.8888888888888888,
+      "ranks": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        6,
+        2,
+        1,
+        1,
+        1,
+        1
+      ]
+    }
+  ],
+  "translations": [
+    {
+      "id": 1,
+      "language": "si",
+      "translation": "What is the cause of the sudden increase in the number of accidents?"
+    },
+    {
+      "id": 1,
+      "language": "ta",
+      "translation": "How many percent of attendance is required to pass the final exam?"
+    },
+    {
+      "id": 2,
+      "language": "si",
+      "translation": "What is the earliest date of the death of Ashoka?"
+    },
+    {
+      "id": 2,
+      "language": "ta",
+      "translation": "What is the time frame for applying for higher education?"
+    },
+    {
+      "id": 3,
+      "language": "si",
+      "translation": "Do you have a book to read before bedtime?"
+    },
+    {
+      "id": 3,
+      "language": "ta",
+      "translation": "How many books can be borrowed from the library for how long?"
+    },
+    {
+      "id": 4,
+      "language": "si",
+      "translation": "What is the cost of using AI in daily life?"
+    },
+    {
+      "id": 4,
+      "language": "ta",
+      "translation": "What penalty would there be if AI development usage was not announced?"
+    },
+    {
+      "id": 5,
+      "language": "si",
+      "translation": "Do you have any experience with ChatGPT?"
+    },
+    {
+      "id": 5,
+      "language": "ta",
+      "translation": "Can I use ChatGPT to edit my draft?"
+    },
+    {
+      "id": 6,
+      "language": "si",
+      "translation": "How many types of lachanakiri are there in the Viharaya?"
+    },
+    {
+      "id": 6,
+      "language": "ta",
+      "translation": "How many credits will be awarded for the final year research project?"
+    },
+    {
+      "id": 7,
+      "language": "si",
+      "translation": "What is the name of the most beautiful flower in the village of Thoragaya?"
+    },
+    {
+      "id": 7,
+      "language": "ta",
+      "translation": "What research topics can I choose for my final year project?"
+    },
+    {
+      "id": 8,
+      "language": "si",
+      "translation": "Do you have any idea how much it costs to rent a room?"
+    },
+    {
+      "id": 8,
+      "language": "ta",
+      "translation": "What is the minimum score required to pass the main subject?"
+    },
+    {
+      "id": 9,
+      "language": "si",
+      "translation": "What is the name of the capital of the Pariyas?"
+    },
+    {
+      "id": 9,
+      "language": "ta",
+      "translation": "How long is a Bachelor's degree in Computer Science?"
+    },
+    {
+      "id": 10,
+      "language": "si",
+      "translation": "Do you have a coconut tree in your village?"
+    },
+    {
+      "id": 10,
+      "language": "ta",
+      "translation": "What items are prohibited in the examination hall?"
+    },
+    {
+      "id": 11,
+      "language": "si",
+      "translation": "What is the price of the book \"Pusthakasala\" by Premasara?"
+    },
+    {
+      "id": 11,
+      "language": "ta",
+      "translation": "How much punishment would be given if a book from the library is returned late?"
+    },
+    {
+      "id": 12,
+      "language": "si",
+      "translation": "Do you have a camera to take pictures of the Buddha statues?"
+    },
+    {
+      "id": 12,
+      "language": "ta",
+      "translation": "How many days before can I pre-register for the group discussion room?"
+    }
+  ]
+}
