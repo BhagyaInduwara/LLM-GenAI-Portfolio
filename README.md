@@ -14,6 +14,7 @@ Module: PUSL3205 — Large Language Models and Generative AI · NSBM Green Unive
 | 2 | [Transformers and Attention](weeks/week-02-transformers-and-attention/README.md) | [notes](weeks/week-02-transformers-and-attention/notes.md) | [lab](weeks/week-02-transformers-and-attention/lab/) | [reflection](weeks/week-02-transformers-and-attention/reflection.md) | ⬜ |
 | 3 | [LLM Internals and Pre-training](weeks/week-03-llm-internals-and-pretraining/README.md) | [notes](weeks/week-03-llm-internals-and-pretraining/notes.md) | [lab](weeks/week-03-llm-internals-and-pretraining/lab/) | [reflection](weeks/week-03-llm-internals-and-pretraining/reflection.md) | ⬜ |
 | 4 | [Fine-Tuning LLMs with LoRA/QLoRA](weeks/week-04-fine-tuning-lora-qlora/README.md) | [notes](weeks/week-04-fine-tuning-lora-qlora/notes.md) | [lab](weeks/week-04-fine-tuning-lora-qlora/lab/) | [reflection](weeks/week-04-fine-tuning-lora-qlora/reflection.md) | ⬜ |
+| 5 | [RAG Architecture](weeks/week-05-rag-architecture/README.md) | [notes](weeks/week-05-rag-architecture/notes.md) | [lab](weeks/week-05-rag-architecture/lab/) | [reflection](weeks/week-05-rag-architecture/reflection.md) | ⬜ |
 
 ## Coursework
 

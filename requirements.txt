@@ -13,3 +13,14 @@ trl
 accelerate
 bitsandbytes
 sacrebleu
+langchain
+langchain-community
+langchain-ollama
+langchain-chroma
+langchain-text-splitters
+chromadb
+streamlit
+pymupdf
+python-docx
+sentence-transformers
+python-dotenv
