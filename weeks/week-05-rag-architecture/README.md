@@ -47,33 +47,26 @@ The lab sheet's steps 3–6 are a real local app, not a notebook, so this is pla
   - `load_and_split_pdfs()` reads PDF(s) with `PyMuPDFLoader` and splits them into overlapping ~1000-character chunks with `RecursiveCharacterTextSplitter` (overlap keeps a sentence that straddles a chunk boundary from losing context).
   - `get_embeddings()` / `get_vectorstore()` wrap the Qwen3 embedding model and the Chroma vector store — this is the "embed → store" half of the RAG workflow from the slides.
   - `build_rag_chain()` wires together a retriever (top-k similarity search over Chroma), a prompt template that inserts the retrieved chunks as `{context}`, the local Llama 3.2 3B model via `ChatOllama`, and a parser that turns the model's reply into plain text — this is the "retrieve → prompt → LLM → response" half.
+  - `build_retriever()` adds **reranking** (on by default, `RERANK` in `.env`): vector search fetches 20 candidates, then a cross-encoder (`ms-marco-MiniLM-L-6-v2` via `sentence-transformers`) scores each (question, chunk) pair together and keeps the best 4. Embeddings encode the question and chunk separately; a cross-encoder reads them jointly, so it's more accurate but too slow to run over every chunk, which is why it only re-scores the shortlist.
   - The prompt explicitly tells the model to answer **only** from the given context and say "I don't know" otherwise — this is what makes it RAG rather than just chatting with the base model.
 - **`ingest.py`** — Lab sheet step "Build ingestion and run `ingest.py`": reads every PDF in a `documents/` folder, chunks and embeds them, and persists them into the Chroma store on disk.
 - **`rag_pipeline.py`** — Lab sheet step "Build rag pipeline and run `rag_pipeline.py`": the terminal chat loop from the lab sheet's screenshot (`Ask a university question (or exit):`), answering from whatever `ingest.py` already stored.
 - **`app.py`** — the lab sheet's **Task**: a Streamlit version (`streamlit run app.py`) where a user uploads one or more of their *own* PDFs through the browser, the app indexes them on the spot into a fresh in-memory Chroma store (so one user's uploads never leak into another's session), and then answers questions through the same chat chain — directly satisfying "read more pdfs" and "users can upload their own pdfs."
+- **`compare_rerank.py`** — prints the chunks retrieved for a question with and without reranking, side by side, to show what the reranker changes. Before/after results on 6 test questions are in [lab/rag_app/README.md](lab/rag_app/README.md#before-vs-after-results). In short: same answers on 4 questions, better answers on 2 (most clearly the capstone-topics question, where reranking found the second half of a list that vector search missed).
 - **`.env.example`** — all the tunable settings (model names, chunk size, folder paths) read via `python-dotenv`, so nothing is hard-coded.
 
 ## How to run it locally
 
+See **[lab/rag_app/README.md](lab/rag_app/README.md)** for full instructions. If everything is already installed, it's just:
+
 ```
 cd lab/rag_app
-py -3.12 -m venv rag_env
-.\rag_env\Scripts\Activate.ps1
-pip install -r ../../../../requirements.txt
-ollama pull llama3.2:3b
-ollama pull qwen3-embedding:0.6b
-copy .env.example .env
-
-mkdir documents          # drop one or more PDFs in here
-python ingest.py         # builds the Chroma store from documents/
-python rag_pipeline.py   # terminal chat, or:
-streamlit run app.py     # browser chat with your own PDF uploads
+python rag_pipeline.py   # terminal chat over documents/, or:
+python -m streamlit run app.py   # browser chat with your own PDF uploads
 ```
-
-This hasn't been run here (no local Ollama/GPU in this environment) — all four files passed a Python syntax check, but the actual RAG behaviour needs Ollama running locally with both models pulled.
 
 ## My work
 
 - [notes.md](notes.md) — my notes
-- [lab/rag_app/](lab/rag_app/) — my completed version of the individual lab: `rag_core.py`, `ingest.py`, `rag_pipeline.py`, and `app.py` (the multi-PDF/upload task). Not yet run — see "How to run it locally" above.
+- [lab/rag_app/](lab/rag_app/) — my completed version of the individual lab: `rag_core.py`, `ingest.py`, `rag_pipeline.py`, and `app.py` (the multi-PDF/upload task). See "How to run it locally" above.
 - [reflection.md](reflection.md) — my reflection

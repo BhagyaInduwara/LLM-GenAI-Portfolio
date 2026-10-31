@@ -1,6 +1,7 @@
 """Shared building blocks used by ingest.py, rag_pipeline.py, and app.py:
-loading/chunking PDFs, the embedding model, the vector store, and the
-retrieve -> prompt -> LLM chain that actually answers a question.
+loading/chunking PDFs, the embedding model, the vector store, the optional
+cross-encoder reranker, and the retrieve -> (rerank) -> prompt -> LLM chain
+that actually answers a question.
 """
 import os
 from pathlib import Path
@@ -12,7 +13,7 @@ from langchain_ollama import OllamaEmbeddings, ChatOllama
 from langchain_chroma import Chroma
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
-from langchain_core.runnables import RunnablePassthrough
+from langchain_core.runnables import RunnablePassthrough, RunnableLambda
 
 load_dotenv()
 
@@ -22,6 +23,12 @@ CHROMA_DIR = os.getenv("CHROMA_DIR", "chroma_db")
 CHUNK_SIZE = int(os.getenv("CHUNK_SIZE", "1000"))
 CHUNK_OVERLAP = int(os.getenv("CHUNK_OVERLAP", "150"))
 TOP_K = int(os.getenv("TOP_K", "4"))
+
+# Reranking: fetch FETCH_K candidates by vector similarity, then let a
+# cross-encoder re-score them against the question and keep the best TOP_K.
+RERANK = os.getenv("RERANK", "true").lower() == "true"
+RERANK_MODEL = os.getenv("RERANK_MODEL", "cross-encoder/ms-marco-MiniLM-L-6-v2")
+FETCH_K = int(os.getenv("FETCH_K", "20"))
 
 PROMPT = ChatPromptTemplate.from_template(
     """You are a university assistant. Answer the question using ONLY the context below.
@@ -61,15 +68,54 @@ def get_vectorstore(persist_dir=CHROMA_DIR, embeddings=None):
     )
 
 
+_reranker = None
+
+
+def get_reranker():
+    """Load the cross-encoder once (downloaded from Hugging Face on first use)."""
+    global _reranker
+    if _reranker is None:
+        from sentence_transformers import CrossEncoder
+
+        _reranker = CrossEncoder(RERANK_MODEL)
+    return _reranker
+
+
+def rerank_docs(question, docs, top_n=TOP_K):
+    """Score each (question, chunk) pair with the cross-encoder and keep the best top_n.
+
+    Unlike embeddings, which encode the question and the chunk separately, a
+    cross-encoder reads them together, so it judges relevance far more
+    accurately — but it's too slow to run over every chunk, hence only on
+    the FETCH_K candidates the vector search already shortlisted.
+    """
+    if not docs:
+        return []
+    scores = get_reranker().predict([(question, d.page_content) for d in docs])
+    ranked = sorted(zip(docs, scores), key=lambda pair: pair[1], reverse=True)
+    for doc, score in ranked:
+        doc.metadata["rerank_score"] = float(score)
+    return [doc for doc, _ in ranked[:top_n]]
+
+
+def build_retriever(vectorstore, k=TOP_K, rerank=RERANK, fetch_k=FETCH_K):
+    """Return a runnable mapping a question to its k most relevant chunks."""
+    if not rerank:
+        return vectorstore.as_retriever(search_kwargs={"k": k})
+
+    candidates = vectorstore.as_retriever(search_kwargs={"k": fetch_k})
+    return RunnableLambda(lambda q: rerank_docs(q, candidates.invoke(q), k))
+
+
 def _format_docs(docs):
     return "\n\n".join(
         f"[{d.metadata.get('source', 'unknown')}] {d.page_content}" for d in docs
     )
 
 
-def build_rag_chain(vectorstore, k=TOP_K):
-    """Build a retrieve -> prompt -> LLM -> text chain for question answering."""
-    retriever = vectorstore.as_retriever(search_kwargs={"k": k})
+def build_rag_chain(vectorstore, k=TOP_K, rerank=RERANK):
+    """Build a retrieve -> (rerank) -> prompt -> LLM -> text chain for question answering."""
+    retriever = build_retriever(vectorstore, k=k, rerank=rerank)
     llm = ChatOllama(model=OLLAMA_LLM_MODEL, temperature=0)
 
     return (
